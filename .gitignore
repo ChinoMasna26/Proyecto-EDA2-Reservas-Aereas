@@ -1,0 +1,11 @@
+*.exe
+*.o
+reservas
+pruebas
+generar
+datos/
+e2500/
+e5000/
+e7500/
+escala_completa.txt
+sesion_menu.txt
