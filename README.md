@@ -24,6 +24,8 @@ src/
   Pruebas.cpp        8 escenarios de prueba, tiempos con <chrono> y métricas
 generador/
   Generador.cpp      genera los archivos de prueba (semilla fija)
+datos/
+  vuelos.csv, reservas_pequeno.csv, reservas_masivo.csv
 compilar.bat         compila los tres programas
 evidencias.bat       mide la escalabilidad y graba una sesion del menu
 entrada_menu.txt     teclas que usa evidencias.bat para la sesion del menu
@@ -34,13 +36,8 @@ entrada_menu.txt     teclas que usa evidencias.bat para la sesion del menu
 Se necesita g++ (MinGW-w64 / WinLibs) en el PATH.
 
 1. Ejecutar `compilar.bat` (genera `reservas.exe`, `pruebas.exe` y `generar.exe`).
-2. Generar los datos de prueba (los archivos CSV no estan en el repositorio):
-   ```
-   mkdir datos
-   generar.exe datos 10000
-   ```
-   Crea `datos/vuelos.csv`, `datos/reservas_pequeno.csv` y `datos/reservas_masivo.csv`.
-   La semilla es fija, asi que siempre se generan los mismos archivos.
+2. Los datos de prueba ya estan en `datos/` (`vuelos.csv`, `reservas_pequeno.csv` y `reservas_masivo.csv`).
+   Para volver a generarlos: `generar.exe datos 10000` (la semilla es fija, salen identicos).
 3. `reservas.exe` abre el menu interactivo (ejecutar desde la carpeta del proyecto).
 4. `pruebas.exe` ejecuta los escenarios 1-8, las metricas y la tabla de tiempos.
 5. `evidencias.bat` mide la escalabilidad (2 500 a 10 000 reservas) y graba una sesion del menu usando `entrada_menu.txt`.
